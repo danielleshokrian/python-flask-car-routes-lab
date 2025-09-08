@@ -4,10 +4,12 @@ app = Flask(__name__)
 
 existing_models = ['Beedle', 'Crossroads', 'M2', 'Panique']
 
+# Home route
 @app.route('/')
 def index():
     return '<h1>Welcome to Flatiron Cars</h1>'
 
+# Dynamic route - show car model 
 @app.route('/models/<model>')
 def show_models(model):
     if model in existing_models:
